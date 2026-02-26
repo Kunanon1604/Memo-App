@@ -302,13 +302,27 @@ const switchTab = (tab) => {
                 </div>
               </div>
 
-              <div class="col-12 d-flex justify-content-between align-items-center mt-5">
-                <div class="form-check form-switch bg-light py-2 px-5 rounded-pill border">
-                  <input v-model="currentNote.isPinned" class="form-check-input ms-0" type="checkbox" id="pinSwitch">
-                  <label class="form-check-label fw-bold small ms-2" for="pinSwitch">Pin to Top</label>
+              <div class="col-12 mt-4">
+                <div class="d-flex align-items-center justify-content-between bg-light p-3 rounded-4 border">
+                  <div class="d-flex align-items-center">
+                    <div class="bg-primary bg-opacity-10 p-2 rounded-3 me-3">
+                      <i class="bi bi-pin-angle-fill text-primary"></i>
+                    </div>
+                    <div>
+                      <h6 class="mb-0 fw-bold">Priority Note</h6>
+                      <p class="small text-secondary mb-0">Pin this note to the top of your list</p>
+                    </div>
+                  </div>
+                  <div class="form-check form-switch fs-4">
+                    <input v-model="currentNote.isPinned" class="form-check-input" type="checkbox" id="pinSwitch">
+                  </div>
                 </div>
-                <button @click="saveNote" class="btn btn-primary btn-lg px-5 py-3 rounded-4 shadow-lg">
-                  {{ currentNote.id ? 'Update Note' : 'Create Note' }}
+              </div>
+
+              <div class="col-12 mt-5">
+                <button @click="saveNote" class="btn btn-primary btn-lg w-100 py-3 rounded-4 shadow-lg fw-bold fs-5">
+                  <i class="bi" :class="currentNote.id ? 'bi-check-all' : 'bi-plus-lg'"></i>
+                  {{ currentNote.id ? ' Update Note' : ' Create Note' }}
                 </button>
               </div>
             </div>
