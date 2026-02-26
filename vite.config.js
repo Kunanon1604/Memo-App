@@ -7,8 +7,9 @@ export default defineConfig({
   plugins: [
     vue(),
     VitePWA({
-      registerType: 'autoUpdate',
+      registerType: 'prompt',
       injectRegister: 'auto',
+      manifestFilename: 'manifest.webmanifest',
       devOptions: {
         enabled: true
       },
